@@ -12,6 +12,7 @@ import scala.concurrent.duration._
 /**
   * Created by cookeem on 16/5/9.
   */
+
 object ParseTest extends App {
   var prompt = "Usage: com.inheater.collector.ParseTest <siteid>"
   if (args.length != 1) {
