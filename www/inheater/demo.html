@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>GGSell商品管理后台</title>
+
+    <!--font css-->
+    <link href="lib/materialize/fonts/material-design-icons/material-icons.css" rel="stylesheet">
+    <link href="lib/materialize/fonts/roboto/roboto.css" rel="stylesheet">
+
+    <!--materialize css-->
+    <link href="lib/materialize/css/materialize.css" rel="stylesheet">
+
+    <!--main style sheet-->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        header, main, footer {
+            padding-left: 240px;
+        }
+
+        @media only screen and (max-width : 992px) {
+            header, main, footer {
+                padding-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <!--顶部导航栏-->
+    <div class="navbar-fixed">
+        <nav id="top-navbar">
+            <div class="nav-wrapper">
+                <a href="#" data-activates="nav-mobile" class="button-collapse hide-on-large-only">
+                    <i class="material-icons">menu</i>
+                </a>
+                <!--顶部导航栏下拉菜单-->
+                <ul id="header-dropdown" class="dropdown-content">
+                    <li><a href="#!">one</a></li>
+                    <li><a href="#!">two</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#!">three</a></li>
+                </ul>
+                <ul class="left">
+                    <li><a href="#!">Logo</a></li>
+                    <li><a href="#"><i class="material-icons">face</i></a></li>
+                    <li class="active"><a href="collapsible.html">Down</a></li>
+                    <li><a class="dropdown-button" href="#!" data-activates="header-dropdown">Menu<i class="material-icons right">arrow_drop_down</i></a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!--左侧导航菜单-->
+    <ul id="nav-mobile" class="side-nav fixed">
+        <li class="center-align">
+            <h4>Face</h4>
+            <i class="large material-icons">face</i>
+        </li>
+        <li class="bold"><a href="#!" class="waves-effect waves-teal">About</a></li>
+        <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+                <li class="bold active"><a class="collapsible-header  waves-effect waves-teal">Components</a>
+                    <div class="collapsible-body" style="">
+                        <ul>
+                            <li><a href="#!">Forms</a></li>
+                            <li><a href="#!">Icons</a></li>
+                            <li><a href="#!">Navbar</a></li>
+                            <li><a href="#!">Pagination</a></li>
+                            <li><a href="#!">Preloader</a></li>
+                            <li><a href="#!">Forms</a></li>
+                            <li><a href="#!">Icons</a></li>
+                            <li><a href="#!">Navbar</a></li>
+                            <li><a href="#!">Pagination</a></li>
+                            <li><a href="#!">Preloader</a></li>
+                            <li><a href="#!">Forms</a></li>
+                            <li><a href="#!">Icons</a></li>
+                            <li><a href="#!">Navbar</a></li>
+                            <li><a href="#!">Pagination</a></li>
+                            <li><a href="#!">Preloader</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="bold active"><a class="collapsible-header active waves-effect waves-teal">JavaScript</a>
+                    <div class="collapsible-body" style="display: block;">
+                        <ul>
+                            <li><a href="#!">Scrollspy</a></li>
+                            <li class="active"><a href="#!">SideNav</a></li>
+                            <li><a href="#!">Tabs</a></li>
+                            <li><a href="#!">Transitions</a></li>
+                            <li><a href="#!">Waves</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</header>
+<main class="row">
+    <div id="main-content" class="col s12" style="padding: 20px;">
+        <div class="row">
+            <div class="card-panel hoverable"> Hoverable Card Panel</div>
+
+            <h4>Striped Table</h4>
+            <table class="striped">
+                <thead>
+                <tr>
+                    <th data-field="id">Name</th>
+                    <th data-field="name">Item Name</th>
+                    <th data-field="price">Item Price</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Alvin</td>
+                    <td>Eclair</td>
+                    <td>$0.87</td>
+                </tr>
+                <tr>
+                    <td>Alan</td>
+                    <td>Jellybean</td>
+                    <td>$3.76</td>
+                </tr>
+                <tr>
+                    <td>Jonathan</td>
+                    <td>Lollipop</td>
+                    <td>$7.00</td>
+                </tr>
+                <tr>
+                    <td>Shannon</td>
+                    <td>KitKat</td>
+                    <td>$9.99</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <h4>Collections</h4>
+            <div class="collection">
+                <a href="#!" class="collection-item">Alan<span class="badge">1</span></a>
+                <a href="#!" class="collection-item">Alan<span class="new badge">4</span></a>
+                <a href="#!" class="collection-item">Alan</a>
+                <a href="#!" class="collection-item">Alan<span class="badge">14</span></a>
+            </div>
+
+            <h4>Badges in Dropdown</h4>
+            <ul id="dropdown2" class="dropdown-content">
+                <li ><a href="#!">one<span class="badge">1</span></a></li>
+                <li><a href="#!">two<span class="new badge">1</span></a></li>
+                <li><a href="#!">three</a></li>
+            </ul>
+            <a class="btn dropdown-button" href="#!" data-activates="dropdown2">
+                Dropdown
+            </a>
+
+            <h4>Badges in Navbar</h4>
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="" class="brand-logo">Logo</a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="">sass</a></li>
+                        <li><a href="">sass <span class="new badge">4</span></a></li>
+                        <li><a href="">sass</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <hr />
+
+            <h4>Raised Button</h4>
+            <a class="waves-effect waves-light btn">button</a>
+            <a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>button</a>
+            <a class="waves-effect waves-light btn"><i class="material-icons right">cloud</i>button</a>
+
+            <h4>Floating Button</h4>
+            <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+
+            <h4>Fixed Action Button</h4>
+            <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+                <a class="btn-floating btn-large red">
+                    <i class="large material-icons">mode_edit</i>
+                </a>
+                <ul>
+                    <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+                    <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+                    <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+                    <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+                </ul>
+            </div>
+
+            <h4>Horizontal FAB</h4>
+            <div class="fixed-action-btn horizontal" style="bottom: 45px; right: 84px;">
+                <a class="btn-floating btn-large red">
+                    <i class="large material-icons">mode_edit</i>
+                </a>
+                <ul>
+                    <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+                    <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+                    <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+                    <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+                </ul>
+            </div>
+
+            <h4>Click-only FAB</h4>
+            <div class="fixed-action-btn horizontal click-to-toggle" style="bottom: 45px; right: 144px;">
+                <a class="btn-floating btn-large red">
+                    <i class="large mdi-navigation-menu"></i>
+                </a>
+                <ul>
+                    <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+                    <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+                    <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+                    <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+                </ul>
+            </div>
+
+            <h4>Flat Button</h4>
+            <a class="waves-effect waves-teal btn-flat">Button</a>
+
+            <h4>Submit Button</h4>
+            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                <i class="material-icons right">send</i>
+            </button>
+
+            <h4>Large Button</h4>
+            <a class="waves-effect waves-light btn-large">Button</a>
+            <a class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>button</a>
+            <a class="waves-effect waves-light btn-large"><i class="material-icons right">cloud</i>button</a>
+
+            <h4>Disabled Button</h4>
+            <a class="btn-large disabled">Button</a>
+            <a class="btn disabled">Button</a>
+            <a class="btn-flat disabled">Button</a>
+            <a class="btn-floating disabled"><i class="material-icons">add</i></a>
+
+            <hr />
+
+            <h4>Breadcrumbs</h4>
+            <nav>
+                <div class="nav-wrapper">
+                    <div class="col s12">
+                        <a href="#!" class="breadcrumb">First</a>
+                        <a href="#!" class="breadcrumb">Second</a>
+                        <a href="#!" class="breadcrumb">Third</a>
+                    </div>
+                </div>
+            </nav>
+
+            <hr />
+
+            <h4>Basic Card</h4>
+            <div class="row">
+                <div class="col s12 m6">
+                    <div class="card blue-grey darken-1">
+                        <div class="card-content white-text">
+                            <span class="card-title">Card Title</span>
+                            <p>I am a very simple card. I am good at containing small bits of information.
+                                I am convenient because I require little markup to use effectively.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h4>Image Card</h4>
+            <div class="row">
+                <div class="col s12 m7">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="images/sample-1.jpg">
+                            <span class="card-title">Card Title</span>
+                        </div>
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.
+                                I am convenient because I require little markup to use effectively.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h4>Card Reveal</h4>
+            <div class="card">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="images/sample-1.jpg">
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+                    <p><a href="#">This is a link</a></p>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                </div>
+            </div>
+
+            <h4>Card Action Options</h4>
+            <div class="card">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="images/sample-1.jpg">
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+
+                    <p><a href="#!">This is a link</a></p>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></i></span>
+                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                </div>
+
+                <div class="card-action">
+                    <a href="#">This is a link</a>
+                    <a href="#">This is a link</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="images/sample-1.jpg">
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+
+                    <p><a href="#!">This is a link</a></p>
+                </div>
+
+                <div class="card-action">
+                    <a href="#">This is a link</a>
+                    <a href="#">This is a link</a>
+                </div>
+
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></i></span>
+                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                </div>
+            </div>
+
+            <h4>Card Panel</h4>
+            <div class="row">
+                <div class="col s12 m5">
+                    <div class="card-panel teal">
+                        <span class="white-text">
+                            I am a very simple card. I am good at containing small bits of information.
+                          I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <hr />
+
+            <h4>Contact Chip</h4>
+            <div class="chip">
+                <img src="images/yuna.jpg" alt="Contact Person">
+                Jane Doe
+                <i class="material-icons">close</i>
+            </div>
+
+            <h4>Tag chip</h4>
+            <div class="chip">
+                Tag
+                <i class="material-icons">close</i>
+            </div>
+
+            <hr />
+            <h4>Basic Collections</h4>
+            <ul class="collection">
+                <li class="collection-item">Alvin</li>
+                <li class="collection-item">Alvin</li>
+                <li class="collection-item">Alvin</li>
+                <li class="collection-item">Alvin</li>
+            </ul>
+
+            <h4>Links Collections</h4>
+            <div class="collection">
+                <a href="#!" class="collection-item">Alvin</a>
+                <a href="#!" class="collection-item active">Alvin</a>
+                <a href="#!" class="collection-item">Alvin</a>
+                <a href="#!" class="collection-item">Alvin</a>
+            </div>
+
+            <h4>Headers Collections</h4>
+            <ul class="collection with-header">
+                <li class="collection-header"><h4>First Names</h4></li>
+                <li class="collection-item">Alvin</li>
+                <li class="collection-item">Alvin</li>
+                <li class="collection-item">Alvin</li>
+                <li class="collection-item">Alvin</li>
+            </ul>
+
+            <h4>Secondary Collections</h4>
+            <ul class="collection with-header">
+                <li class="collection-header"><h4>First Names</h4></li>
+                <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+                <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+                <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+                <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+            </ul>
+
+            <h4>Avatar Collections</h4>
+            <ul class="collection">
+                <li class="collection-item avatar">
+                    <img src="images/yuna.jpg" alt="" class="circle">
+                    <span class="title">Title</span>
+                    <p>First Line <br>
+                        Second Line
+                    </p>
+                    <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                </li>
+                <li class="collection-item avatar">
+                    <i class="material-icons circle">folder</i>
+                    <span class="title">Title</span>
+                    <p>First Line <br>
+                        Second Line
+                    </p>
+                    <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                </li>
+                <li class="collection-item avatar">
+                    <i class="material-icons circle green">insert_chart</i>
+                    <span class="title">Title</span>
+                    <p>First Line <br>
+                        Second Line
+                    </p>
+                    <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                </li>
+                <li class="collection-item avatar">
+                    <i class="material-icons circle red">play_arrow</i>
+                    <span class="title">Title</span>
+                    <p>First Line <br>
+                        Second Line
+                    </p>
+                    <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                </li>
+            </ul>
+
+            <h4>Dismissable Collections</h4>
+            <ul class="collection">
+                <li class="collection-item dismissable"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+                <li class="collection-item dismissable"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+                <li class="collection-item dismissable"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+                <li class="collection-item dismissable"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+            </ul>
+
+            <hr />
+
+            <h4>Input fields</h4>
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+                            <label for="first_name">First Name</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="last_name" type="text" class="validate">
+                            <label for="last_name">Last Name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input disabled value="I am not editable" id="disabled" type="text" class="validate">
+                            <label for="disabled">Disabled</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="password" type="password" class="validate">
+                            <label for="password">Password</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="email" type="email" class="validate">
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <h4>Prefilling Text Inputs</h4>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input value="Alvin" id="first_name2" type="text" class="validate">
+                    <label class="active" for="first_name2">First Name</label>
+                </div>
+            </div>
+
+            <h4>Icon Prefixes</h4>
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input id="icon_prefix" type="text" class="validate">
+                            <label for="icon_prefix">First Name</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">phone</i>
+                            <input id="icon_telephone" type="tel" class="validate">
+                            <label for="icon_telephone">Telephone</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <h4>Custom Tips</h4>
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="email1" type="email" class="validate">
+                            <label for="email1" data-error="wrong" data-success="right">Email</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <h4>Textarea</h4>
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="textarea001" class="materialize-textarea"></textarea>
+                            <label for="textarea001">Textarea</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <h4>Textarea Icon Prefix</h4>
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">mode_edit</i>
+                            <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+                            <label for="icon_prefix2">First Name</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <h4>Select</h4>
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            <select>
+                                <option value="" disabled selected>Choose your option</option>
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                                <option value="3">Option 3</option>
+                            </select>
+                            <label>Materialize Select</label>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <select multiple>
+                                <option value="" disabled selected>Choose your option</option>
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                                <option value="3">Option 3</option>
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                                <option value="3">Option 3</option>
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                                <option value="3">Option 3</option>
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                                <option value="3">Option 3</option>
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                                <option value="3">Option 3</option>
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                                <option value="3">Option 3</option>
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                                <option value="3">Option 3</option>
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                                <option value="3">Option 3</option>
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                                <option value="3">Option 3</option>
+                            </select>
+                            <label>Materialize Multiple Select</label>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <select>
+                                <optgroup label="team 1">
+                                    <option value="1">Option 1</option>
+                                    <option value="2">Option 2</option>
+                                </optgroup>
+                                <optgroup label="team 2">
+                                    <option value="3">Option 3</option>
+                                    <option value="4">Option 4</option>
+                                </optgroup>
+                            </select>
+                            <label>Optgroups</label>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <select class="icons">
+                                <option value="" disabled selected>Choose your option</option>
+                                <option value="" data-icon="images/sample-1.jpg" class="circle">example 1</option>
+                                <option value="" data-icon="images/office.jpg" class="circle">example 2</option>
+                                <option value="" data-icon="images/yuna.jpg" class="circle">example 1</option>
+                            </select>
+                            <label>Images in select</label>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <select class="icons">
+                                <option value="" disabled selected>Choose your option</option>
+                                <option value="" data-icon="images/sample-1.jpg" class="left circle">example 1</option>
+                                <option value="" data-icon="images/office.jpg" class="left circle">example 2</option>
+                                <option value="" data-icon="images/yuna.jpg" class="left circle">example 3</option>
+                            </select>
+                            <label>Images in select</label>
+                        </div>
+                        <div class="col s12">
+                            <br>
+                            <p>You can add the class <code class="language-markup">browser-default</code> to get the browser default.</p>
+                        </div>
+                        <div class="col s12 m6">
+                            <label>Browser Select</label>
+                            <select class="browser-default">
+                                <option value="" disabled selected>Choose your option</option>
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                                <option value="3">Option 3</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <hr />
+
+            <h4>Radio Buttons</h4>
+            <form action="#">
+                <p>
+                    <input name="group1" type="radio" id="test1" />
+                    <label for="test1">Red</label>
+                </p>
+                <p>
+                    <input name="group1" type="radio" id="test2" />
+                    <label for="test2">Yellow</label>
+                </p>
+                <p>
+                    <input class="with-gap" name="group1" type="radio" id="test3"  />
+                    <label for="test3">Green</label>
+                </p>
+                <p>
+                    <input name="group1" type="radio" id="test4" disabled="disabled" />
+                    <label for="test4">Brown</label>
+                </p>
+            </form>
+
+            <hr />
+
+            <h4>Checkboxes</h4>
+            <form action="#">
+                <p>
+                    <input type="checkbox" id="test5" />
+                    <label for="test5">Red</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="test6" checked="checked" />
+                    <label for="test6">Yellow</label>
+                </p>
+                <p>
+                    <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+                    <label for="filled-in-box">Filled in</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="test7" checked="checked" disabled="disabled" />
+                    <label for="test7">Green</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="test8" disabled="disabled" />
+                    <label for="test8">Brown</label>
+                </p>
+            </form>
+
+            <hr />
+
+            <h4>Switches</h4>
+            <div class="switch">
+                <label>
+                    Off
+                    <input type="checkbox">
+                    <span class="lever"></span>
+                    On
+                </label>
+            </div>
+
+            <!-- Disabled Switch -->
+            <div class="switch">
+                <label>
+                    Off
+                    <input disabled type="checkbox">
+                    <span class="lever"></span>
+                    On
+                </label>
+            </div>
+
+            <hr />
+
+            <h4>File Input</h4>
+            <div>Single select</div>
+            <form action="#">
+                <div class="file-field input-field">
+                    <div class="btn">
+                        <span>File</span>
+                        <input type="file">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                    </div>
+                </div>
+            </form>
+
+            <div>Multiple select</div>
+            <form action="#">
+                <div class="file-field input-field">
+                    <div class="btn">
+                        <span>File</span>
+                        <input type="file" multiple>
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text" placeholder="Upload one or more files">
+                    </div>
+                </div>
+            </form>
+
+            <hr />
+
+            <h4>Range</h4>
+            <form action="#">
+                <p class="range-field">
+                    <input type="range" id="range-test" min="0" max="100" />
+                </p>
+            </form>
+
+            <hr />
+
+            <h4>Date Picker</h4>
+            <input type="date" class="datepicker" placeholder="BirthDay">
+
+            <hr />
+
+            <h4>Character Counter</h4>
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="input_text" type="text" length="10">
+                            <label for="input_text">Input text</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="textarea002" class="materialize-textarea" length="120"></textarea>
+                            <label for="textarea002">Textarea</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <hr />
+
+            <h4>Icons</h4>
+            <i class="large material-icons">insert_chart</i>
+            <i class="medium material-icons">insert_chart</i>
+            <i class="small material-icons">insert_chart</i>
+            <i class="tiny material-icons">insert_chart</i>
+
+            <hr />
+
+            <h4>Right Aligned Links</h4>
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="#" class="brand-logo">Logo</a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="sass.html">Sass</a></li>
+                        <li><a href="badges.html">Components</a></li>
+                        <li><a href="collapsible.html">JavaScript</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <h4>Left Aligned Links</h4>
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="#" class="brand-logo right">Logo</a>
+                    <ul class="left hide-on-med-and-down">
+                        <li><a href="sass.html">Sass</a></li>
+                        <li><a href="badges.html">Components</a></li>
+                        <li><a href="collapsible.html">JavaScript</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <h4>Centering the logo</h4>
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="#" class="brand-logo center">Logo</a>
+                    <ul class="left hide-on-med-and-down">
+                        <li><a href="sass.html">Sass</a></li>
+                        <li><a href="badges.html">Components</a></li>
+                        <li><a href="collapsible.html">JavaScript</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <h4>Active Navbar</h4>
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="#!" class="brand-logo">LogoX</a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="sass.html">Sass</a></li>
+                        <li><a href="badges.html">Components</a></li>
+                        <li class="active"><a href="collapsible.html">JavaScript</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <h4>Navbar Dropdown Menu</h4>
+            <ul id="dropdown1" class="dropdown-content">
+                <li><a href="#!">one</a></li>
+                <li><a href="#!">two</a></li>
+                <li class="divider"></li>
+                <li><a href="#!">three</a></li>
+            </ul>
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="#!" class="brand-logo">Logo</a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="sass.html">Sass</a></li>
+                        <li><a href="badges.html">Components</a></li>
+                        <!-- Dropdown Trigger -->
+                        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <h4>Icon Navbar</h4>
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="#!" class="brand-logo">Logo</a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="sass.html"><i class="material-icons">search</i></a></li>
+                        <li><a href="badges.html"><i class="material-icons">view_module</i></a></li>
+                        <li><a href="collapsible.html"><i class="material-icons">refresh</i></a></li>
+                        <li><a href="mobile.html"><i class="material-icons">more_vert</i></a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <h4>Left right icon</h4>
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="#!" class="brand-logo">Logo</a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="sass.html"><i class="material-icons left">search</i>Link with Left Icon</a></li>
+                        <li><a href="badges.html"><i class="material-icons right">view_module</i>Link with Right Icon</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <hr />
+
+            <h4>Pagination</h4>
+            <ul class="pagination">
+                <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+                <li class="active"><a href="#!">1</a></li>
+                <li class="waves-effect"><a href="#!">2</a></li>
+                <li class="waves-effect"><a href="#!">3</a></li>
+                <li class="waves-effect"><a href="#!">4</a></li>
+                <li class="waves-effect"><a href="#!">5</a></li>
+                <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+            </ul>
+
+            <hr />
+
+            <h4>Determinate</h4>
+            <div class="progress">
+                <div class="determinate" style="width: 70%"></div>
+            </div>
+
+            <h4>Indeterminate</h4>
+            <div class="progress">
+                <div class="indeterminate"></div>
+            </div>
+
+            <h4>Circular</h4>
+            <div class="preloader-wrapper big active">
+                <div class="spinner-layer spinner-blue-only">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div><div class="gap-patch">
+                    <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+                </div>
+            </div>
+
+            <div class="preloader-wrapper active">
+                <div class="spinner-layer spinner-red-only">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div><div class="gap-patch">
+                    <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+                </div>
+            </div>
+
+            <div class="preloader-wrapper small active">
+                <div class="spinner-layer spinner-green-only">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div><div class="gap-patch">
+                    <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+                </div>
+            </div>
+
+            <h4>Circular Flashing Colors</h4>
+            <div class="preloader-wrapper big active">
+                <div class="spinner-layer spinner-blue">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div><div class="gap-patch">
+                    <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+                </div>
+
+                <div class="spinner-layer spinner-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div><div class="gap-patch">
+                    <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+                </div>
+
+                <div class="spinner-layer spinner-yellow">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div><div class="gap-patch">
+                    <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+                </div>
+
+                <div class="spinner-layer spinner-green">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div><div class="gap-patch">
+                    <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+                </div>
+            </div>
+
+            <h4>Collapsible</h4>
+            <ul class="collapsible" data-collapsible="expandable">
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+                    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+                </li>
+                <li>
+                    <div class="collapsible-header active"><i class="material-icons">place</i>Second</div>
+                    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+                    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+                </li>
+            </ul>
+
+            <h4>Collapsible PopUp</h4>
+            <ul class="collapsible popout" data-collapsible="accordion">
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+                    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+                </li>
+                <li>
+                    <div class="collapsible-header active"><i class="material-icons">place</i>Second</div>
+                    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+                    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+                </li>
+            </ul>
+
+            <hr />
+
+            <h4>Toast</h4>
+            <a class="btn" onclick="Materialize.toast('I am a toast', 4000)">Toast!</a>
+
+            <h4>Tool Tips</h4>
+            <a class="btn tooltipped" data-position="bottom" data-delay="50" data-tooltip="I am tooltip">Bottom</a>
+            <a class="btn tooltipped" data-position="top" data-delay="50" data-tooltip="I am tooltip">Top</a>
+            <a class="btn tooltipped" data-position="left" data-delay="50" data-tooltip="I am tooltip">Left</a>
+            <a class="btn tooltipped" data-position="right" data-delay="50" data-tooltip="I am tooltip">Right</a>
+
+            <h4>Media</h4>
+            <img class="materialboxed" data-caption="A picture of some deer and tons of trees" width="400" src="images/sample-1.jpg">
+
+            <hr />
+
+            <h4>Modals</h4>
+            <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+
+            <!-- Modal Structure -->
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <h4>Modal Header</h4>
+                    <p>A bunch of text</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                </div>
+            </div>
+
+            <p>
+                <br />
+                <br />
+                <br />
+                <br />
+            </p>
+        </div>
+    </div>
+</main>
+<footer class="page-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2014 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        </div>
+    </div>
+</footer>
+<!-- angularjs -->
+<script src="lib/angularjs/angular.min-1.5.1.js"></script>
+
+<!--materialize js-->
+<script src="lib/jquery/jquery.min-1.11.3.js"></script>
+<script src="lib/materialize/js/materialize.min.js"></script>
+
+<!--app script-->
+<script src="js/global-materialize.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<div ng-controller="contentListAppCtl">
+    <div id="content-list" class="row" ng-repeat="contentList in contentLists">
+        <div class="col s12">
+            <div class="card-panel grey lighten-5 z-depth-1 hoverable">
+                <div class="row valign-wrapper">
+                    <div class="col s12">
+                        <h5>
+                            <a href="index.html#!/content/{{contentList.cuid}}">{{contentList.title}}</a>
+                        </h5>
+                        <div ng-class="(contentList.titleimage != '') ? 'black-text col s9' : 'black-text col s12'">
+                            {{contentList.content}}
+                        </div>
+                        <div class="col s3" ng-if="contentList.titleimage">
+                            <img data-original="{{contentList.titleimage}}" class="lazy" width="100%"/>
+                        </div>
+                        <div class="row">
+                        </div>
+                        <div class="col s3">&nbsp;<span ng-if="contentList.postdate" >发布日期: {{contentList.postdate}}</span> </div>
+                        <div class="col s3">&nbsp;<span ng-if="contentList.author" >作者: {{contentList.author}}</span> </div>
+                        <div class="col s6 right-align"><a href="index.html#!/content-list/{{contentList.sid}}">{{contentList.sitename}}</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <ul class="pagination right ye" ng-if="pages > 0">
+            <li class="waves-effect"><a href="javascript:void(0)" ng-click="pageChange(1)"><i class="material-icons">chevron_left</i></a></li>
+            <li ng-repeat="i in range" ng-class="(i == page) ? 'active yellow' : ''">
+                <a href="javascript:void(0)" ng-click="pageChange(i)">{{i}}</a>
+            </li>
+            <li class="waves-effect"><a href="javascript:void(0)" ng-click="pageChange(pages)"><i class="material-icons">chevron_right</i></a></li>
+        </ul>
+    </div>
+</div>

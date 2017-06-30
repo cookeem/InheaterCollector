@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/inheater/">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>智黑头条</title>
+
+    <link rel="shortcut icon"  href="images/favicon.ico">
+    <!--font css-->
+    <link href="lib/materialize/fonts/material-design-icons/material-icons.css" rel="stylesheet">
+    <link href="lib/materialize/fonts/roboto/roboto.css" rel="stylesheet">
+
+    <!--materialize css-->
+    <link href="lib/materialize/css/materialize.css" rel="stylesheet">
+
+    <!--统计图需要-->
+    <!--<link href="lib/chartjs/css/angular-chart.min.css" rel="stylesheet">-->
+
+    <!--main style sheet-->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body ng-app="app">
+<header ng-controller="headerCtl">
+    <!--顶部导航栏-->
+    <nav id="top-navbar">
+        <div class="nav-wrapper yellow">
+            <a href="#" data-activates="nav-mobile" class="button-collapse hide-on-large-only text-black">
+                <i class="material-icons">menu</i>
+            </a>
+
+            <!--顶部导航栏下拉菜单-->
+            <ul id="header-dropdown" class="dropdown-content">
+                <li><a href="index.html#!/changePwd" class="red-text">修改密码</a></li>
+                <li class="divider"></li>
+                <li><a href="index.html#!/logout" class="grey-text">退出登录</a></li>
+            </ul>
+            <ul class="right">
+                <li><a class="black-text"><i class="material-icons left">language</i>智黑头条</a></li>
+                <li><a class="dropdown-button black-text" href="index.html#!" data-activates="header-dropdown">账号<i class="material-icons right">arrow_drop_down</i></a></li>
+            </ul>
+        </div>
+    </nav>
+    <!--左侧导航菜单-->
+    <ul id="nav-mobile" class="side-nav fixed">
+        <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+                <li class="bold active yellow">
+                    <a class="collapsible-header active waves-effect waves-light"><i class="material-icons">view_comfy</i>站点列表</a>
+                    <div class="collapsible-body" style="">
+                        <ul>
+                            <li ng-class="siteList.sid == sid ? 'active yellow' : ''" ng-repeat="siteList in siteLists"><a id="content-list" href="index.html#!/content-list/{{siteList.sid}}" class="black-text">{{siteList.sitename}}</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</header>
+<main ng-controller="contentCtl">
+    <div id="main-content" class="col s12" style="padding: 20px;">
+        <div ng-if="isLoading" class="row center spinner-fade">
+            <div class="preloader-wrapper big active">
+                <div class="spinner-layer spinner-blue">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div><div class="gap-patch">
+                    <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+                </div>
+
+                <div class="spinner-layer spinner-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div><div class="gap-patch">
+                    <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+                </div>
+
+                <div class="spinner-layer spinner-yellow">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div><div class="gap-patch">
+                    <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+                </div>
+
+                <div class="spinner-layer spinner-green">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div><div class="gap-patch">
+                    <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div ng-view>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="page-footer yellow" style="padding-top: 0px;">
+    <div class="footer-copyright">
+        <div class="container black-text" align="center">
+            © 2016 Copyright inHeater.com
+        </div>
+    </div>
+</footer>
+<!-- angularjs -->
+<script src="lib/angularjs/angular.min-1.5.1.js"></script>
+<script src="lib/angularjs/angular-route.min-1.5.1.js"></script>
+<script src="lib/angularjs/angular-animate.min-1.5.1.js"></script>
+
+
+<!--materialize js-->
+<script src="lib/jquery/jquery.min-1.11.3.js"></script>
+<script src="lib/materialize/js/materialize.min.js"></script>
+
+<!--image lazy loading js-->
+<script src="lib/lazy/jquery.lazyload.min.js"></script>
+
+<!--统计图需要-->
+<!--<script src="lib/chartjs/js/chart.min.js"></script>-->
+<!--<script src="lib/chartjs/js/angular-chart.min.js"></script>-->
+
+<!--app script-->
+<script src="js/global-materialize.js"></script>
+
+<script src="js/index.js"></script>
+<script src="js/content-list.js"></script>
+<script src="js/content.js"></script>
+
+<script>
+</script>
+</body>
+</html>

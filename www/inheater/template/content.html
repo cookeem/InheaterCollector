@@ -1,0 +1,28 @@
+<div ng-controller="contentAppCtl">
+    <div class="row" ng-if="content.sid != 0">
+        <div class="col s12">
+            <h5>
+                {{content.title}}
+            </h5>
+            <div class="row"></div>
+            <div class="row" ng-if="content.extrainfo">{{content.extrainfo}}</div>
+            <div class="row">
+                <div class="col s12">
+                    <div class="chip" ng-repeat="tag in content.tags" style="margin-right: 10px;">
+                        {{tag.tagname}}
+                    </div>
+                    &nbsp;
+                </div>
+            </div>
+            <div class="row">
+                <div id="article-content" class="black-text col s12" ng-bind-html="content.content | trustHtml">
+                </div>
+            </div>
+            <div class="row">
+            </div>
+            <div class="col s3"><span ng-if="content.postdate" >发布日期: {{content.postdate}}</span> </div>
+            <div class="col s3"><span ng-if="content.author" >作者: {{content.author}}</span> </div>
+            <div class="col s6 right-align"><a href="index.html#!/content-list/{{content.sid}}">{{content.sitename}}</a></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+body {
+    margin:0;
+    padding:0;
+    overflow-x:hidden;
+}
+
+/*左侧导航栏菜单自适应*/
+#article-content img {
+    max-width:80%;
+    width: expression(document.body.clientWidth > 80% ? "80%":"auto");
+    overflow: hidden;
+}
+header, main, footer {
+    padding-left: 240px;
+}
+@media only screen and (max-width : 992px) {
+    header, main, footer {
+        padding-left: 0;
+    }
+}
+
+/*底部导航栏锁定*/
+body {
+    background-color: #fcfcfc;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+main {
+    flex: 1 0 auto;
+}
+
+#toast-container .toast {
+    cursor: pointer;
+}
+
+/*loading淡入淡出*/
+.spinner-fade.ng-enter {
+    transition:1s linear all;
+    opacity:0;
+}
+.spinner-fade.ng-enter.ng-enter-active {
+    opacity:100;
+}

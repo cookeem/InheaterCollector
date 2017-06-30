@@ -1,0 +1,137 @@
+**************************
+MySQL数据库格式
+**************************
+
+sites（站点数据表）
+######################
+sid ：站点ID
+sitename ：站点名称
+siteurl ：网站链接
+entryurl ：入口页面url，假如入口页面url不为空，那么需要抓取entryurl然后抓取listurl
+urlformat ：抓取列表URL格式，例如：
+{
+	"url": "http://www.abc.com/list?page=<num>&count=10&timestamp=<timestamp>",
+	"numfirst": 1,
+	"numlast": 20
+}
+isenable ：是否有效
+isweixin ：是否微信公众号爬虫
+wxconfig ：微信公众号配置,例如: type=0表示文章 type=1表示公众号
+{
+    "keyword": "智黑",
+    "contenttype": 0
+}
+isbrowser ：是否使用浏览器抓取
+isscroll ：是否进行浏览器自动滚屏
+islocal ：是否必须本地图片才能浏览
+listjson ：列表页json数据url所在位置的格式，如果不为空表示格式为json，用于抓取内容url. urlprefix是内容url的前缀, extraprefix表示只能够抓取文章id的前缀补全
+{
+  "contenturl": "| data || web | url",
+  "urlprefix": "http://www.huxiu.com/article/",
+  "extraprefix": "http://www.leikeji.com/article/<id>"
+}
+listhtml ：列表页html数据url所在位置的格式，如果不为空表示格式为html，用于抓取内容url
+{
+  "list": "div#listbox",
+  "contenturl": "div.pro-title > a[href^=/store/detail-]",
+  "urlprefix": "http://www.huxiu.com/article/",
+  "attr": "hrefs"
+}
+contentjson ：内容页json数据内容所在位置的格式，如果不为空表示格式为json，用于抓取内容，标题，标题图片，图片
+{
+  "content": "| data || web | url",
+  "title": "| data || web | url",
+  "author": "| data || web | url",
+  "postdate": "| data || web | url",
+  "tag": "| data || web | url",
+  "titleimage": "| data || web | url"
+}
+contenthtml ：内容页html数据内容所在位置的格式，如果不为空表示格式为html，用于抓取内容，标题，标题图片，图片
+{
+  "content": "div#listbox",
+  "title": "div.pro-title > a[href^=/store/detail-]",
+  "author": "div.pro-title > a[href^=/store/detail-]",
+  "postdate": "div.pro-title > a[href^=/store/detail-]",
+  "tag": "div#tag",
+  "titleimage": "img#title-image"
+}
+interval ：页面抓取时间间隔，单位秒。抓取完第一页，下一页抓取的时间间隔
+schedule ：完整爬取完第一次所有列表页之后,重新爬取第一页的时间间隔
+lastfetch ：列表页或者内容页抓取的最后时间戳
+parseerror ：检查listjson、listhtml、contentjson、contenthtml是否存在配置解释错误
+listcreated ：列表页是否已经生成。如果urlformat有更新，请务必设置该字段为0
+
+listurls（列表页url）
+######################
+luid ：列表页ID
+sid ：对应的站点ID
+listurl ：列表页URL
+source ：列表页源码
+dateline ：生成时间
+lastupdate ：最后更新时间
+connectcount ：成功连接次数
+parsecount ：成功解释次数
+isfirst ：是否列表的第一页，如果是第一页每次都抓取
+isenable ：是否有效，假如无效不进行爬取
+status ：处理状态（0：待处理，1：处理中表示提交到actor，2：已完成，3：下载异常，4：解释异常）
+connecterror ：下载异常原因
+parseerror ：解析异常原因
+duration ：抓取和解析时间
+
+contenturls（内容页）
+######################
+cuid ：内容页ID
+luid ：对应的列表页ID
+sid ：对应的站点ID
+url ：内容页URL
+source ：内容页完整源码
+postdate ：内容发布时间
+dateline ：生成时间
+lastupdate ：最后更新时间
+title ：标题
+author ：作者
+extrainfo ：其他扩展信息
+contenttext ：内容文本
+contentsource ：内容区源码
+contentabsurl ：修改为绝对路径的内容区源码
+contentlocalurl ：修改为本地图片路径的内容区源码
+titleimageid ：标题图片id
+indexfinish ：是否已经在elasticsearch进行索引
+imagefinish ：图片是否下载完成
+status ：处理状态（0：待处理，1：处理中表示提交到actor，2：已完成，3：下载异常，4：解释异常）
+connecterror ：下载异常原因
+parseerror ：解析异常原因
+duration ：抓取和解析时间
+
+images（下载图片）
+######################
+imgid ：图片ID
+cuid ：对应的内容页ID
+sid ：对应的站点ID
+urlabs ：图片完整URL
+urlsrc ：图片源URL
+dateline ：生成时间
+lastupdate ：最后更新时间
+path ：本地目录路径
+filename ：文件名
+size ：文件大小
+status ：处理状态（0：待处理，1：处理中表示提交到actor，2：已完成，3：下载异常，4：解释异常）
+connecterror ：下载异常原因
+duration ：抓取和解析时间
+
+articletags（标签）
+######################
+tid ：标签ID
+tagname ：标签
+
+contenttags（内容页标签对应表）
+######################
+ctid ：自动编号ID
+tid ：标签ID
+cuid ：内容页ID
+
+**************************
+ElasticSearch索引格式
+**************************
+只存内容，以及标题，进行index_ansj分词处理
+
