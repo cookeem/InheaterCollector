@@ -34,8 +34,6 @@ object CollectorApp extends App {
   val routercountMinImage = config.getInt("routercount.min.imagescaner")
   val routercountMaxImage = config.getInt("routercount.max.imagescaner")
 
-  val indexscanerActive = config.getInt("indexscaner.active")
-
   val system = ActorSystem("system", config)
 
   //启动SiteScaner
@@ -52,8 +50,4 @@ object CollectorApp extends App {
   //启动WxContentScaner
   system.actorOf(WxContentScaner.props(system, intervalWxContent, routercountMinWxContent, routercountMaxWxContent), "wxContentScaner")
 
-  //启动IndexScaner
-  if (indexscanerActive != 0) {
-    system.actorOf(IndexScaner.props(system, intervalIndex), "indexScaner")
-  }
 }

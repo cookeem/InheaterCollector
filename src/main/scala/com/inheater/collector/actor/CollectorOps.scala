@@ -3,7 +3,6 @@ package com.inheater.collector.actor
 import java.util.UUID
 
 import com.inheater.collector.common.CommonOps._
-import com.inheater.collector.es.EsOps._
 import com.inheater.collector.http.ConfigVerify._
 import com.inheater.collector.http.HttpFetch._
 import com.inheater.collector.http.SourceParser._
@@ -12,7 +11,7 @@ import com.inheater.collector.mysql.Tables._
 
 import akka.event.LoggingAdapter
 import play.api.libs.json.{JsNumber, JsString, Json}
-import slick.driver.MySQLDriver.api._
+import slick.jdbc.MySQLProfile.api._
 
 import scala.async.Async._
 import scala.concurrent.ExecutionContext.Implicits.global
@@ -864,8 +863,6 @@ object CollectorOps {
     val contenturlQuery = contenturls.filter(cu => cu.status === 2 && cu.indexfinish === 0).map(cu => (cu.cuid, cu.url, cu.title, cu.contenttext, cu.lastupdate)).sortBy(cu => cu._1.asc).take(count)
     val contenturlResult = await{db.run(contenturlQuery.result)}
     contenturlResult.foreach{case (cuid, url, title, contenttext, lastupdate) => {
-      var indexFinishStatus = 1
-      Await.result(db.run(contenturls.filter(_.cuid === cuid).map(_.indexfinish).update(indexFinishStatus)), Duration.Inf)
       var tags = ""
       val tagsQuery = {
         for {
@@ -875,15 +872,6 @@ object CollectorOps {
         } yield atag.tagname
       }
       tags = Await.result(db.run(tagsQuery.result), Duration.Inf).mkString(",")
-      val (idxId, errmsg) = indexContentUrls(cuid, url, title, tags, contenttext)
-      if (idxId.nonEmpty) {
-        indexFinishStatus = 2
-        insertCount += 1
-      } else {
-        indexFinishStatus = 3
-        log.error(s"scanIndexContent error: $errmsg")
-      }
-      Await.result(db.run(contenturls.filter(_.cuid === cuid).map(_.indexfinish).update(indexFinishStatus)), Duration.Inf)
     }}
     val t2 = System.currentTimeMillis
     val duration = Math.round(t2 - t1)

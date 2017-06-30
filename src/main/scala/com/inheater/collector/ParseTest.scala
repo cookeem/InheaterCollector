@@ -4,11 +4,10 @@ import com.inheater.collector.http.ConfigVerify._
 import com.inheater.collector.mysql.Tables._
 import com.inheater.collector.http.SourceParser._
 
-import slick.driver.MySQLDriver.api._
+import slick.jdbc.MySQLProfile.api._
 
 import scala.concurrent.Await
 import scala.concurrent.duration._
-import scala.concurrent.ExecutionContext.Implicits.global
 
 /**
   * Created by cookeem on 16/5/9.

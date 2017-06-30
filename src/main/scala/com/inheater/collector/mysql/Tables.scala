@@ -3,7 +3,7 @@ package com.inheater.collector.mysql
 import java.io.File
 
 import com.typesafe.config.ConfigFactory
-import slick.driver.MySQLDriver.api._
+import slick.jdbc.MySQLProfile.api._
 
 /**
   * Created by cookeem on 16/4/22.

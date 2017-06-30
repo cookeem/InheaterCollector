@@ -21,11 +21,10 @@ import scala.util.Random
 object HttpFetch {
   val config =  ConfigFactory.parseFile(new File("conf/application.conf"))
   val system = ActorSystem("firefox-system", config)
-  import system.dispatcher
   val routercountMinFirefox = config.getInt("routercount.min.firefoxactor")
   val routercountMaxFirefox = config.getInt("routercount.max.firefoxactor")
   val firefoxManager = system.actorOf(FirefoxManager.props(routercountMinFirefox, routercountMaxFirefox), "firefoxManager")
-  implicit val timeout = Timeout(300 seconds)
+  implicit val timeout = Timeout(300.seconds)
 
   //获取html源码,支持模拟浏览器以及jsoup方式获取,对于微信公众号进行特殊处理
   //input: url:页面url, isWeixin:是否采集微信公众号, isBrowser:是否模拟浏览器爬取, isScroll:是否模拟浏览器滚屏

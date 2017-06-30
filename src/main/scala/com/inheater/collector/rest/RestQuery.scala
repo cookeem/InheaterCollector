@@ -3,7 +3,7 @@ package com.inheater.collector.rest
 import com.inheater.collector.mysql.Tables._
 import org.jsoup.Jsoup
 import play.api.libs.json._
-import slick.driver.MySQLDriver.api._
+import slick.jdbc.MySQLProfile.api._
 
 import scala.async.Async._
 import scala.collection.JavaConversions._
