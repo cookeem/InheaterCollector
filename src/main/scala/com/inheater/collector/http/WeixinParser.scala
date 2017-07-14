@@ -28,24 +28,24 @@ object WeixinParser {
       connectError = htmlFetch._2
       if (connectError == "") {
         val doc = Jsoup.parse(source, urlList)
-        val matchArticle = "div[class=weixin-public] div.results div[d]"
+        val matchArticle = "div.news-box > ul.news-list > li[d]"
         val docMatch = doc.select(matchArticle)
         articles = docMatch.map(div => {
           //抽取文章url
           var urlArticle = ""
-          val a = div.select("a[data-z]")
+          val a = div.select("div.txt-box > h3 > a")
           if (a.nonEmpty) {
             urlArticle = a(0).attr("abs:href")
           }
           //抽取图片
           var titleimageArticle = ""
-          val imgs = div.select("a[data-z] > img")
+          val imgs = div.select("div.img-box a[data-z] img")
           if (imgs.nonEmpty) {
             titleimageArticle = imgs(0).attr("abs:src")
           }
           //抽取标题
           var titleArticle = ""
-          val titles = div.select("div[class=txt-box] > h4 > a")
+          val titles = div.select("div.txt-box > h3 > a")
           if (titles.nonEmpty) {
             titleArticle = titles(0).text()
           }
@@ -84,7 +84,7 @@ object WeixinParser {
       parseError = ""
       if (connectError == "") {
         var doc = Jsoup.parse(source, urlList)
-        val matchUrl = "div.results div[href][target]"
+        val matchUrl = "div.news-box > ul.news-list2 > li[d] p.tit a"
         var docMatch = doc.select(matchUrl)
         var urlProfile = ""
         if (docMatch.nonEmpty) {
